@@ -3,14 +3,15 @@ applications:
 - name: hello-v1
   memory: 64M
   instances: 1
-  hosts: 
-  - hello-${random-word}
-  - v1-hello-${random-word}
+  routes:
+  - route: hello-v1-randomname.apps.eknathdemo.tasdemo.vmwareexploreindia.com
+  - route: v1-hello-randomname.apps.eknathdemo.tasdemo.vmwareexploreindia.com
   buildpack: php_buildpack
   path: hello-v1/
 - name: hello-v2
   memory: 64M
   instances: 1
-  host: v2-hello-${random-word}
+  routes:
+  - route: v2-hello-randomname.apps.eknathdemo.tasdemo.vmwareexploreindia.com
   buildpack: php_buildpack
   path: hello-v2/
